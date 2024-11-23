@@ -1,11 +1,11 @@
 <?php
 session_start();
-include_once 'https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/config.php'; // For DB connection
-include_once 'https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/functions.php'; // For utility functions
+include_once 'config.php'; // For DB connection
+include_once 'functions.php'; // For utility functions
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header("Location: https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/login.php");
+    header("Location: login.php");
     exit();
 }
 
@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_destroy();
 
         // Redirect the user to the register page or a goodbye message
-        header("Location: https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/index.php");
+        header("Location: index.php");
         exit();
     } catch (PDOException $e) {
         echo "Error: " . $e->getMessage();
@@ -40,15 +40,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Delete Account</title>
 </head>
 <body>
     <h1>Delete Your Account</h1>
     <p>Are you sure you want to delete your account? This action is irreversible.</p>
-    <form method="post" action="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/delete_user.php">
+    <form method="post" action="delete_user.php">
         <button type="submit">Yes, delete my account</button>
-        <a href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/dashboard.php">No, take me back</a>
+        <a href="dashboard.php">No, take me back</a>
     </form>
 </body>
 </html>
