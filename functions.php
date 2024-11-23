@@ -1,5 +1,5 @@
 <?php
-include_once 'config.php';
+include_once 'https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/config.php';
 
 function registerUser($username, $password) {
     global $pdo;
