@@ -1,12 +1,12 @@
 <?php
 session_start();
-include_once 'functions.php'; // Adjusted path
+include_once 'https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/functions.php'; // Adjusted path
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     if (registerUser($username, $password)) {
-        header('Location: login.php');
+        header('Location: https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/login.php');
         exit;
     } else {
         $error = "Registration failed!";
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/styles.css">
     <style>
         /* General styling */
         body {
@@ -111,7 +111,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Register</button>
             <?php if (isset($error)) echo "<p>$error</p>"; ?>
         </form>
-        <a href="login.php">Already have an account? Log in</a>
+        <a href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/login.php">Already have an account? Log in</a>
     </div>
 </body>
 </html>
