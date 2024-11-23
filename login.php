@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../includes/functions.php'; // Corrected path
+include_once 'https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/functions.php'; // Corrected path
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($user) {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['role'] = $user['role'];
-        header('Location: dashboard.php');
+        header('Location: https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/dashboard.php');
         exit;
     } else {
         $error = "Invalid credentials!";
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Login</button>
             <?php if (isset($error)) echo "<p>$error</p>"; ?>
         </form>
-        <a href="register.php">Don't have an account? Register</a>
+        <a href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/register.php">Don't have an account? Register</a>
     </div>
 </body>
 </html>
