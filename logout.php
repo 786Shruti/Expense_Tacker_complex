@@ -16,6 +16,6 @@ if (ini_get("session.use_cookies")) {
 session_destroy(); // Destroy the session
 
 // Redirect to login page
-header('Location: https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/login.php');
+header('Location: login.php');
 exit;
 ?>
