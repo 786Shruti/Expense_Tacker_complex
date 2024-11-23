@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Login</button>
             <?php if (isset($error)) echo "<p>$error</p>"; ?>
         </form>
-        <a href="register.php">Don't have an account? Register</a>
+        <a href="index.php">Don't have an account? Register</a>
     </div>
 </body>
 </html>
