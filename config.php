@@ -1,5 +1,5 @@
 <?php
-$host = 'localhost';
+$host = 'financetracker.c38yq4es48vi.ap-south-1.rds.amazonaws.com';
 $db = 'finance_tracker';
 $user = 'root'; // Your MySQL username
 $pass = '*7860Ss*'; // Your MySQL password
