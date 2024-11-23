@@ -1,9 +1,9 @@
 <?php
 session_start();
-include_once '../includes/functions.php'; // Corrected path
+include_once 'https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/functions.php'; // Corrected path
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/login.php');
     exit;
 }
 
@@ -16,7 +16,7 @@ $expenses = getUserExpenses($userId);
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="stylesheet" href=https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/styles.css"> <!-- Adjusted path for CSS -->
     <style>
         body {
             height: 100vh; /* Full height */
@@ -72,12 +72,12 @@ $expenses = getUserExpenses($userId);
 </head>
 <body>
     <h1>Welcome to Your Dashboard</h1>
-    <a href="add_expense.php">Add Expense</a>
-    <a href="logout.php">Logout</a> <!-- Logout option added -->
+    <a href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/add_expense.php">Add Expense</a>
+    <a href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/logout.php">Logout</a> <!-- Logout option added -->
     <h2>Your Expenses</h2>
     
     <!-- Optional Delete User link -->
-    <form action="delete_user.php" method="post" style="display:inline;">
+    <form action="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/delete_user.php" method="post" style="display:inline;">
         <input type="hidden" name="user_id" value="<?php echo $userId; ?>">
         <button type="submit" onclick="return confirm('Are you sure you want to delete your account?');">Delete Account</button>
     </form>
@@ -101,7 +101,7 @@ $expenses = getUserExpenses($userId);
                     <td><?php echo htmlspecialchars($expense['category']); ?></td>
                     <td><?php echo htmlspecialchars($expense['description']); ?></td>
                     <td><?php echo htmlspecialchars($expense['date']); ?></td>
-                    <td><a href="delete_expense.php?id=<?php echo $expense['id']; ?>">Delete</a></td>
+                    <td><a href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/delete_expense.php?id=<?php echo $expense['id']; ?>">Delete</a></td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>
