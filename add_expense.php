@@ -3,7 +3,7 @@ session_start();
 include_once 'https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/functions.php'; // Corrected path
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/login.php');
     exit;
 }
 
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $date = $_POST['date'];
 
     if (addExpense($userId, $amount, $category, $description, $date)) {
-        header('Location: dashboard.php');
+        header('Location: https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/dashboard.php');
         exit;
     } else {
         $error = "Failed to add expense!";
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Add Expense</title>
-    <link rel="stylesheet" href="../css/styles.css"> <!-- Adjusted path for CSS -->
+    <link rel="stylesheet" href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/styles.css"> <!-- Adjusted path for CSS -->
 </head>
 <body>
     <div class="container">
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <button type="submit">Add Expense</button>
             <?php if (isset($error)) echo "<p class='error'>$error</p>"; ?>
         </form>
-        <a href="dashboard.php" class="back-link">Back to Dashboard</a>
+        <a href="https://ec2-13-233-150-88.ap-south-1.compute.amazonaws.com/dashboard.php" class="back-link">Back to Dashboard</a>
     </div>
 </body>
 </html>
