@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once '../includes/functions.php'; // Adjusted path
+include_once 'functions.php'; // Adjusted path
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
